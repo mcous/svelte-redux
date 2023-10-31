@@ -1,0 +1,55 @@
+{
+  "name": "svelte-redux",
+  "version": "0.0.1",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js"
+    }
+  },
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.spec.*"
+  ],
+  "scripts": {
+    "build": "vite build && npm run package",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "dev": "vite dev",
+    "package": "svelte-kit sync && svelte-package && publint",
+    "prepublishOnly": "npm run package",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@mcous/eslint-config": "0.4.0",
+    "@mcous/prettier-config": "0.3.0",
+    "@mcous/typescript-config": "0.2.1",
+    "@sveltejs/adapter-auto": "^2.0.0",
+    "@sveltejs/kit": "^1.20.4",
+    "@sveltejs/package": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "6.9.0",
+    "@typescript-eslint/parser": "6.9.0",
+    "eslint": "8.52.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-promise": "6.1.1",
+    "eslint-plugin-sonarjs": "0.21.0",
+    "eslint-plugin-unicorn": "48.0.1",
+    "eslint-plugin-vitest": "0.3.8",
+    "prettier": "3.0.3",
+    "publint": "^0.1.9",
+    "redux": "^4.2.1",
+    "svelte": "^4.0.5",
+    "svelte-check": "^3.4.3",
+    "tslib": "^2.4.1",
+    "typescript": "5.2.2",
+    "vite": "^4.4.2",
+    "vitest": "^0.34.6"
+  },
+  "peerDependencies": {
+    "svelte": "^4.0.0"
+  }
+}
